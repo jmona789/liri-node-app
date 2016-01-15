@@ -30,8 +30,8 @@ function runProgram(params){
       console.log("Please enter a command.");
       break;
     default:
-     console.log("That is not a valid command.");
-     break;
+      console.log("That is not a valid command.");
+      break;
   }
 }
 
