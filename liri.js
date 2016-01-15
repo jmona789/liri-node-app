@@ -3,6 +3,7 @@ var keys = require("./keys.js");
 var param = process.argv.slice(2);
 var Twitter = require('twitter');
 var spotify = require('spotify');
+var request = require('request');
 
 var client = new Twitter({
   consumer_key: keys.twitterKeys.consumer_key,
@@ -65,5 +66,33 @@ function spotifyThisSong(){
         console.log("Album: " + data.tracks.items[0].album.name);
       }
     });
+  }
+}
+
+function movieThis(){
+  if (param[1] === undefined){
+    request("http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&r=json", function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log("Title: " + JSON.parse(body).Title);
+        console.log("Year: " + JSON.parse(body).Year);
+        console.log("IMDB rating: " + JSON.parse(body).imdbRating);
+        console.log("Country: " + JSON.parse(body).Country);
+        console.log("Language: " + JSON.parse(body).Language);
+        console.log("Plot: " + JSON.parse(body).Plot);
+        console.log("Actors: " + JSON.parse(body).Actors);
+      }
+    })
+  }else{
+    request("http://www.omdbapi.com/?t=" + param[1] + "&y=&plot=short&r=json", function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log(JSON.parse(body).Title);
+        console.log("Year: " + JSON.parse(body).Year);
+        console.log("IMDB rating: " + JSON.parse(body).imdbRating);
+        console.log("Country: " + JSON.parse(body).Country);
+        console.log("Language: " + JSON.parse(body).Language);
+        console.log("Plot: " + JSON.parse(body).Plot);
+        console.log("Actors: " + JSON.parse(body).Actors);
+      }
+    })
   }
 }
