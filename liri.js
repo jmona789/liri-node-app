@@ -24,7 +24,13 @@ function runProgram(params){
       movieThis();
       break;
     case "do-what-it-says":
-     doWhatItSays();
+      doWhatItSays();
+      break;
+    case undefined:
+      console.log("Please enter a command.");
+      break;
+    default:
+     console.log("That is not a valid command.");
      break;
   }
 }
