@@ -1,6 +1,6 @@
 var fs = require("fs");
 var keys = require("./keys.js");
-var param = process.argv.slice(2);
+var params = process.argv.slice(2);
 var Twitter = require('twitter');
 var spotify = require('spotify');
 var request = require('request');
@@ -12,20 +12,24 @@ var client = new Twitter({
   access_token_secret: keys.twitterKeys.access_token_secret
 });
 
-switch(param[0]){
-  case "my-tweets":
-    myTweets();
-    break;
-  case "spotify-this-song":
-    spotifyThisSong();
-    break;
-  case "movie-this":
-    movieThis();
-    break;
-  case "do-what-it-says":
-   doWhatItSays();
-   break;
+function runProgram(params){
+  switch(params[0]){
+    case "my-tweets":
+      myTweets();
+      break;
+    case "spotify-this-song":
+      spotifyThisSong();
+      break;
+    case "movie-this":
+      movieThis();
+      break;
+    case "do-what-it-says":
+     doWhatItSays();
+     break;
+  }
 }
+
+runProgram(params)
 
 function myTweets(){
   client.get('statuses/user_timeline', function(error, tweets, response){
@@ -42,7 +46,7 @@ function myTweets(){
 }
 
 function spotifyThisSong(){
-  if (param[1] === undefined){
+  if (params[1] === undefined){
     spotify.search({type: "track", query: "What's My Age Again?" }, function(err, data) {
       if ( err ) {
           console.log("Error occurred: " + err);
@@ -55,7 +59,7 @@ function spotifyThisSong(){
       }
     })
   }else{
-    spotify.search({type: "track", query: param[1] }, function(err, data) {
+    spotify.search({type: "track", query: params[1] }, function(err, data) {
       if ( err ) {
           console.log("Error occurred: " + err);
           return;
@@ -70,7 +74,7 @@ function spotifyThisSong(){
 }
 
 function movieThis(){
-  if (param[1] === undefined){
+  if (params[1] === undefined){
     request("http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&r=json", function (error, response, body) {
       if (!error && response.statusCode == 200) {
         console.log("Title: " + JSON.parse(body).Title);
@@ -83,7 +87,7 @@ function movieThis(){
       }
     })
   }else{
-    request("http://www.omdbapi.com/?t=" + param[1] + "&y=&plot=short&r=json", function (error, response, body) {
+    request("http://www.omdbapi.com/?t=" + params[1] + "&y=&plot=short&r=json", function (error, response, body) {
       if (!error && response.statusCode == 200) {
         console.log(JSON.parse(body).Title);
         console.log("Year: " + JSON.parse(body).Year);
@@ -95,4 +99,16 @@ function movieThis(){
       }
     })
   }
+}
+
+function doWhatItSays(){
+  fs.readFile("random.txt", "utf8", function(err, data){
+    if (err){
+      console.log(err);
+    }else{
+      data = data.split(",");
+      var params = data
+      runProgram(params);
+    }
+  })
 }
