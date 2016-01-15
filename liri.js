@@ -1,8 +1,8 @@
 var fs = require("fs");
 var keys = require("./keys.js");
 var param = process.argv.slice(2);
-
 var Twitter = require('twitter');
+var spotify = require('spotify');
 
 var client = new Twitter({
   consumer_key: keys.twitterKeys.consumer_key,
@@ -38,4 +38,28 @@ function myTweets(){
       console.log(i+1 + ". On " + tweets[i].created_at + " You Tweeted: " + tweets[i].text);
     }
   });
+}
+
+function spotifyThisSong(){
+  if (param[1] === undefined){
+    spotify.search({type: "track", query: "What's My Age Again?" }, function(err, data) {
+      if ( err ) {
+          console.log("Error occurred: " + err);
+          return;
+      }else{
+        console.log("Artist: " + data.tracks.items[0].artists[0].name)
+        console.log("Song Name: " + data.tracks.items[0].name);
+      }
+    })
+  }else{
+    spotify.search({type: "track", query: param[1] }, function(err, data) {
+      if ( err ) {
+          console.log("Error occurred: " + err);
+          return;
+      }else{
+        console.log("Artist: " + data.tracks.items[0].artists[0].name)
+        console.log("Song Name: " + data.tracks.items[0].name);
+      }
+    });
+  }
 }
