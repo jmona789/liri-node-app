@@ -55,8 +55,8 @@ function spotifyThisSong(){
   if (params[1] === undefined){
     spotify.search({type: "track", query: "What's My Age Again?" }, function(err, data) {
       if ( err ) {
-          console.log("Error occurred: " + err);
-          return;
+        console.log("Error occurred: " + err);
+        return;
       }else{
         console.log("Artist: " + data.tracks.items[0].artists[0].name);
         console.log("Song Name: " + data.tracks.items[0].name);
@@ -67,8 +67,8 @@ function spotifyThisSong(){
   }else{
     spotify.search({type: "track", query: params[1] }, function(err, data) {
       if ( err ) {
-          console.log("Error occurred: " + err);
-          return;
+        console.log("Error occurred: " + err);
+        return;
       }else{
         console.log("Artist: " + data.tracks.items[0].artists[0].name)
         console.log("Song Name: " + data.tracks.items[0].name);
