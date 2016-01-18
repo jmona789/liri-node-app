@@ -5,6 +5,9 @@ var Twitter = require('twitter');
 var spotify = require('spotify');
 var request = require('request');
 
+fs.appendFile("log.txt", process.argv + "\n", function(err){
+})
+
 var client = new Twitter({
   consumer_key: keys.twitterKeys.consumer_key,
   consumer_secret: keys.twitterKeys.consumer_secret,
@@ -47,6 +50,8 @@ function myTweets(){
     console.log("Your last 20 tweets:")
     for (i = 0; i < 20; i++){
       console.log(i+1 + ". On " + tweets[i].created_at + " You Tweeted: " + tweets[i].text);
+      fs.appendFile("log.txt", i+1 + ". On " + tweets[i].created_at + " You Tweeted: " + tweets[i].text + "\n", function(err){
+      })
     }
   });
 }
@@ -58,10 +63,10 @@ function spotifyThisSong(){
         console.log("Error occurred: " + err);
         return;
       }else{
-        console.log("Artist: " + data.tracks.items[0].artists[0].name);
-        console.log("Song Name: " + data.tracks.items[0].name);
-        console.log("Listen on Spotify: " + data.tracks.items[0].artists[0].external_urls.spotify);
-        console.log("Album: " + data.tracks.items[0].album.name);
+        spotifyInfo = "Artist: " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "Listen on Spotify: " + data.tracks.items[0].artists[0].external_urls.spotify +"\n" + "Album: " + data.tracks.items[0].album.name;
+        console.log(spotifyInfo)
+        fs.appendFile("log.txt", spotifyInfo, function(err){
+        })
       }
     })
   }else{
@@ -70,10 +75,10 @@ function spotifyThisSong(){
         console.log("Error occurred: " + err);
         return;
       }else{
-        console.log("Artist: " + data.tracks.items[0].artists[0].name)
-        console.log("Song Name: " + data.tracks.items[0].name);
-        console.log("Listen on Spotify: " + data.tracks.items[0].artists[0].external_urls.spotify);
-        console.log("Album: " + data.tracks.items[0].album.name);
+        spotifyInfo = "Artist: " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "Listen on Spotify: " + data.tracks.items[0].artists[0].external_urls.spotify +"\n" + "Album: " + data.tracks.items[0].album.name + "\n";
+        console.log(spotifyInfo)
+        fs.appendFile("log.txt", spotifyInfo, function(err){
+        })
       }
     });
   }
@@ -83,25 +88,19 @@ function movieThis(){
   if (params[1] === undefined){
     request("http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&r=json", function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        console.log("Title: " + JSON.parse(body).Title);
-        console.log("Year: " + JSON.parse(body).Year);
-        console.log("IMDB rating: " + JSON.parse(body).imdbRating);
-        console.log("Country: " + JSON.parse(body).Country);
-        console.log("Language: " + JSON.parse(body).Language);
-        console.log("Plot: " + JSON.parse(body).Plot);
-        console.log("Actors: " + JSON.parse(body).Actors);
+        movieInfo = "Title: " + JSON.parse(body).Title + "\n" + "Year: " + JSON.parse(body).Year + "\n" + "IMDB rating: " + JSON.parse(body).imdbRating + "\n" + "Country: " + JSON.parse(body).Country + "\n" + "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n"+ "Actors: " + JSON.parse(body).Actors + "\n"
+        console.log(movieInfo);
+        fs.appendFile("log.txt", movieInfo, function(err){
+        })
       }
     })
   }else{
     request("http://www.omdbapi.com/?t=" + params[1] + "&y=&plot=short&r=json", function (error, response, body) {
       if (!error && response.statusCode == 200) {
-        console.log(JSON.parse(body).Title);
-        console.log("Year: " + JSON.parse(body).Year);
-        console.log("IMDB rating: " + JSON.parse(body).imdbRating);
-        console.log("Country: " + JSON.parse(body).Country);
-        console.log("Language: " + JSON.parse(body).Language);
-        console.log("Plot: " + JSON.parse(body).Plot);
-        console.log("Actors: " + JSON.parse(body).Actors);
+        movieInfo = "Title: " + JSON.parse(body).Title + "\n" + "Year: " + JSON.parse(body).Year + "\n" + "IMDB rating: " + JSON.parse(body).imdbRating + "\n" + "Country: " + JSON.parse(body).Country + "\n" + "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n"+ "Actors: " + JSON.parse(body).Actors + "\n"
+        console.log(movieInfo);
+        fs.appendFile("log.txt", movieInfo, function(err){
+        })
       }
     })
   }
@@ -113,7 +112,7 @@ function doWhatItSays(){
       console.log(err);
     }else{
       data = data.split(",");
-      var params = data
+      var params = data;
       runProgram(params);
     }
   })
