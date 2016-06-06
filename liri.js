@@ -41,7 +41,7 @@ function runProgram (command, commandArg){
     default:
         console.log("That is not a valid command.");
         break;
-  }
+    }
 }
 
 //runs program
