@@ -2,6 +2,8 @@
 var fs = require("fs");
 var keys = require("./keys.js");
 var params = process.argv.slice(2);
+var command = params[0];
+var commandArg = params[1];
 var Twitter = require('twitter');
 var spotify = require('spotify');
 var request = require('request');
@@ -19,19 +21,19 @@ var client = new Twitter({
 });
 
 //uses a swicth case statement to figure out wihich function to run
-function runProgram(params){
-  switch(params[0]){
+function runProgram(command, commandArg){
+  switch(command){
     case "my-tweets":
       myTweets();
       break;
     case "spotify-this-song":
-      spotifyThisSong();
+      spotifyThisSong(commandArg);
       break;
     case "movie-this":
-      movieThis();
+      movieThis(commandArg);
       break;
     case "do-what-it-says":
-      doWhatItSays();
+      doWhatItSays(commandArg);
       break;
     case undefined:
       console.log("Please enter a command.");
@@ -43,7 +45,7 @@ function runProgram(params){
 }
 
 //runs program
-runProgram(params)
+runProgram(command, commandArg);
 
 //grabs the last 20 tweets of the user from the twitter api and displays and logs them
 function myTweets(){
@@ -63,8 +65,8 @@ function myTweets(){
 }
 
 //grabs song info from spotify api and displays and logs them
-function spotifyThisSong(){
-  if (params[1] === undefined){
+function spotifyThisSong(commandArg){
+  if (commandArg === undefined){
     spotify.search({type: "track", query: "What's My Age Again?" }, function(err, data) {
       if ( err ) {
         console.log("Error occurred: " + err);
@@ -77,7 +79,7 @@ function spotifyThisSong(){
       }
     })
   }else{
-    spotify.search({type: "track", query: params[1] }, function(err, data) {
+    spotify.search({type: "track", query: commandArg }, function(err, data) {
       if ( err ) {
         console.log("Error occurred: " + err);
         return;
@@ -93,8 +95,8 @@ function spotifyThisSong(){
 
 
 //grabs movie info from the OMDB api and displays and logs them
-function movieThis(){
-  if (params[1] === undefined){
+function movieThis(commandArg){
+  if (commandArg === undefined){
     request("http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
       if (!error && response.statusCode == 200) {
         movieInfo = "Title: " + JSON.parse(body).Title + "\n" + "Year: " + JSON.parse(body).Year + "\n" + "IMDB rating: " + JSON.parse(body).imdbRating + "\n" + "Country: " + JSON.parse(body).Country + "\n" + "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n"+ "Actors: " + JSON.parse(body).Actors + "\n" + "Rotten Tomatoes Rating:" + JSON.parse(body).tomatoRating + "\n" + "Rotten Tomatoes URL:" + JSON.parse(body).tomatoURL +"\n";
@@ -104,7 +106,7 @@ function movieThis(){
       }
     })
   }else{
-    request("http://www.omdbapi.com/?t=" + params[1] + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
+    request("http://www.omdbapi.com/?t=" + commandArg + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
       if (!error && response.statusCode == 200) {
         movieInfo = "Title: " + JSON.parse(body).Title + "\n" + "Year: " + JSON.parse(body).Year + "\n" + "IMDB rating: " + JSON.parse(body).imdbRating + "\n" + "Country: " + JSON.parse(body).Country + "\n" + "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n"+ "Actors: " + JSON.parse(body).Actors + "\n" + "Rotten Tomatoes Rating:" + JSON.parse(body).tomatoRating + "\n" + "Rotten Tomatoes URL:" + JSON.parse(body).tomatoURL +"\n";
         console.log(movieInfo);
@@ -122,8 +124,7 @@ function doWhatItSays(){
       console.log(err);
     }else{
       data = data.split(",");
-      var params = data;
-      runProgram(params);
+      runProgram(data[0], data[1]);
     }
   })
 }
