@@ -27,7 +27,7 @@ function runProgram(command, commandArg){
       myTweets();
       break;
     case "spotify":
-      spotifyThisSong(commandArg);
+      spotifyFunc(commandArg);
       break;
     case "movie":
       movieThis(commandArg);
@@ -67,7 +67,7 @@ function myTweets(){
 }
 
 //grabs song info from spotify api and displays and logs them
-function spotify(commandArg){
+function spotifyFunc(commandArg){
   if (commandArg === undefined){
     commandArg = "What's My Age Again?";
   }
