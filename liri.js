@@ -23,16 +23,16 @@ var client = new Twitter({
 //uses a swicth case statement to figure out wihich function to run
 function runProgram(command, commandArg){
   switch(command){
-    case "my-tweets":
+    case "tweets":
       myTweets();
       break;
-    case "spotify-this-song":
+    case "spotify":
       spotifyThisSong(commandArg);
       break;
-    case "movie-this":
+    case "movie":
       movieThis(commandArg);
       break;
-    case "do-what-it-says":
+    case "read-command":
       doWhatItSays(commandArg);
       break;
     case undefined:
