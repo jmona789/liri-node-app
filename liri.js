@@ -30,7 +30,7 @@ function runProgram(command, commandArg){
       spotifyFunc(commandArg);
       break;
     case "movie":
-      movieThis(commandArg);
+      movie(commandArg);
       break;
     case "read-command":
       doWhatItSays(commandArg);
@@ -85,24 +85,17 @@ function spotifyFunc(commandArg){
 
 
 //grabs movie info from the OMDB api and displays and logs them
-function movieThis(commandArg){
+function movie(commandArg){
   if (commandArg === undefined){
-    request("http://www.omdbapi.com/?t=Mr+Nobody&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        movieInfo = "Title: " + JSON.parse(body).Title + "\n" + "Year: " + JSON.parse(body).Year + "\n" + "IMDB rating: " + JSON.parse(body).imdbRating + "\n" + "Country: " + JSON.parse(body).Country + "\n" + "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n"+ "Actors: " + JSON.parse(body).Actors + "\n" + "Rotten Tomatoes Rating:" + JSON.parse(body).tomatoRating + "\n" + "Rotten Tomatoes URL:" + JSON.parse(body).tomatoURL +"\n";
-        console.log(movieInfo);
-        log(movieInfo);
-      }
-    })
-  }else{
-    request("http://www.omdbapi.com/?t=" + commandArg + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        movieInfo = "Title: " + JSON.parse(body).Title + "\n" + "Year: " + JSON.parse(body).Year + "\n" + "IMDB rating: " + JSON.parse(body).imdbRating + "\n" + "Country: " + JSON.parse(body).Country + "\n" + "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n"+ "Actors: " + JSON.parse(body).Actors + "\n" + "Rotten Tomatoes Rating:" + JSON.parse(body).tomatoRating + "\n" + "Rotten Tomatoes URL:" + JSON.parse(body).tomatoURL +"\n";
-        console.log(movieInfo);
-        log(movieInfo);
-      }
-    })
+    commandArg = "Mr. Nobody";
   }
+  request("http://www.omdbapi.com/?t=" + commandArg + "&y=&plot=short&r=json&tomatoes=true", function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      movieInfo = "Title: " + JSON.parse(body).Title + "\n" + "Year: " + JSON.parse(body).Year + "\n" + "IMDB rating: " + JSON.parse(body).imdbRating + "\n" + "Country: " + JSON.parse(body).Country + "\n" + "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n"+ "Actors: " + JSON.parse(body).Actors + "\n" + "Rotten Tomatoes Rating:" + JSON.parse(body).tomatoRating + "\n" + "Rotten Tomatoes URL:" + JSON.parse(body).tomatoURL +"\n";
+      console.log(movieInfo);
+      log(movieInfo);
+    }
+  })
 }
 
 //passes in text from random.txt as arguments for the runProgram function
