@@ -50,17 +50,19 @@ runProgram(command, commandArg);
 //grabs the last 20 tweets of the user from the twitter api and displays and logs them
 function myTweets(){
   client.get('statuses/user_timeline', function(error, tweets, response){
-    console.log(error);
     if(error) {
       console.log(error);
       throw error;
     }
-    console.log("Your last 20 tweets:")
+    var tweetArray =["Your last 20 tweets:"];
     for (i = 0; i < 20; i++){
-      console.log(i+1 + ". On " + tweets[i].created_at + " You Tweeted: " + tweets[i].text);
-      fs.appendFile("log.txt", i+1 + ". On " + tweets[i].created_at + " You Tweeted: " + tweets[i].text + "\n", function(err){
-      })
+      tweetArray.push(i+1 + ". On " + tweets[i].created_at + " You Tweeted: " + tweets[i].text);
+      //fs.appendFile("log.txt", i+1 + ". On " + tweets[i].created_at + " You Tweeted: " + tweets[i].text + "\n", function(err){
     }
+    tweetArray.forEach(function(element, index, array) {
+      console.log(tweetArray[index]);
+      log(tweetArray[index] +"\n")
+    });
   });
 }
 
@@ -73,9 +75,8 @@ function spotifyThisSong(commandArg){
         return;
       }else{
         spotifyInfo = "Artist: " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "Listen on Spotify: " + data.tracks.items[0].artists[0].external_urls.spotify +"\n" + "Album: " + data.tracks.items[0].album.name;
-        console.log(spotifyInfo)
-        fs.appendFile("log.txt", spotifyInfo, function(err){
-        })
+        console.log(spotifyInfo);
+        log(spotifyInfo);
       }
     })
   }else{
@@ -85,9 +86,8 @@ function spotifyThisSong(commandArg){
         return;
       }else{
         spotifyInfo = "Artist: " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "Listen on Spotify: " + data.tracks.items[0].artists[0].external_urls.spotify +"\n" + "Album: " + data.tracks.items[0].album.name + "\n";
-        console.log(spotifyInfo)
-        fs.appendFile("log.txt", spotifyInfo, function(err){
-        })
+        console.log(spotifyInfo);
+        log(spotifyInfo);
       }
     });
   }
@@ -101,8 +101,7 @@ function movieThis(commandArg){
       if (!error && response.statusCode == 200) {
         movieInfo = "Title: " + JSON.parse(body).Title + "\n" + "Year: " + JSON.parse(body).Year + "\n" + "IMDB rating: " + JSON.parse(body).imdbRating + "\n" + "Country: " + JSON.parse(body).Country + "\n" + "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n"+ "Actors: " + JSON.parse(body).Actors + "\n" + "Rotten Tomatoes Rating:" + JSON.parse(body).tomatoRating + "\n" + "Rotten Tomatoes URL:" + JSON.parse(body).tomatoURL +"\n";
         console.log(movieInfo);
-        fs.appendFile("log.txt", movieInfo, function(err){
-        })
+        log(movieInfo);
       }
     })
   }else{
@@ -110,8 +109,7 @@ function movieThis(commandArg){
       if (!error && response.statusCode == 200) {
         movieInfo = "Title: " + JSON.parse(body).Title + "\n" + "Year: " + JSON.parse(body).Year + "\n" + "IMDB rating: " + JSON.parse(body).imdbRating + "\n" + "Country: " + JSON.parse(body).Country + "\n" + "Language: " + JSON.parse(body).Language + "\n" + "Plot: " + JSON.parse(body).Plot + "\n"+ "Actors: " + JSON.parse(body).Actors + "\n" + "Rotten Tomatoes Rating:" + JSON.parse(body).tomatoRating + "\n" + "Rotten Tomatoes URL:" + JSON.parse(body).tomatoURL +"\n";
         console.log(movieInfo);
-        fs.appendFile("log.txt", movieInfo, function(err){
-        })
+        log(movieInfo);
       }
     })
   }
@@ -127,4 +125,9 @@ function doWhatItSays(){
       runProgram(data[0], data[1]);
     }
   })
+}
+
+function log(info){
+  fs.appendFile("log.txt", info + "\n", function(err){
+  });
 }
