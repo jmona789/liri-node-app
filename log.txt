@@ -1,0 +1,14 @@
+/usr/local/bin/node,/Users/JamesMona/Development/rcb/liri/liri.js,spotify
+/usr/local/bin/node,/Users/JamesMona/Development/rcb/liri/liri.js,spotify,Hello
+Artist: Adele
+Song Name: Hello
+Listen on Spotify: https://open.spotify.com/artist/4dpARuHxo51G3z768sgnrY
+Album: Hello
+
+/usr/local/bin/node,/Users/JamesMona/Development/rcb/liri/liri.js,spotify
+/usr/local/bin/node,/Users/JamesMona/Development/rcb/liri/liri.js,spotify
+Artist: blink-182
+Song Name: What's My Age Again?
+Listen on Spotify: https://open.spotify.com/artist/6FBDaR13swtiWwGhX1WQsP
+Album: Enema Of The State (Explicit Version)
+

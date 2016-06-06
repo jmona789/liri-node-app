@@ -67,30 +67,20 @@ function myTweets(){
 }
 
 //grabs song info from spotify api and displays and logs them
-function spotifyThisSong(commandArg){
+function spotify(commandArg){
   if (commandArg === undefined){
-    spotify.search({type: "track", query: "What's My Age Again?" }, function(err, data) {
-      if ( err ) {
-        console.log("Error occurred: " + err);
-        return;
-      }else{
-        spotifyInfo = "Artist: " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "Listen on Spotify: " + data.tracks.items[0].artists[0].external_urls.spotify +"\n" + "Album: " + data.tracks.items[0].album.name;
-        console.log(spotifyInfo);
-        log(spotifyInfo);
-      }
-    })
-  }else{
-    spotify.search({type: "track", query: commandArg }, function(err, data) {
-      if ( err ) {
-        console.log("Error occurred: " + err);
-        return;
-      }else{
-        spotifyInfo = "Artist: " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "Listen on Spotify: " + data.tracks.items[0].artists[0].external_urls.spotify +"\n" + "Album: " + data.tracks.items[0].album.name + "\n";
-        console.log(spotifyInfo);
-        log(spotifyInfo);
-      }
-    });
+    commandArg = "What's My Age Again?";
   }
+  spotify.search({type: "track", query: commandArg }, function(err, data) {
+    if ( err ) {
+      console.log("Error occurred: " + err);
+      return;
+    }else{
+      spotifyInfo = "Artist: " + data.tracks.items[0].artists[0].name + "\n" + "Song Name: " + data.tracks.items[0].name + "\n" + "Listen on Spotify: " + data.tracks.items[0].artists[0].external_urls.spotify +"\n" + "Album: " + data.tracks.items[0].album.name + "\n";
+      console.log(spotifyInfo);
+      log(spotifyInfo);
+    }
+  });
 }
 
 
