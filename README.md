@@ -21,19 +21,19 @@ exports.twitterKeys = {
 ##Usage
 Anytime you want to use liri simply cd into the directory and run any of the following commands by running 'node liri.js' followed by on the following arguemnts
 
-###my-tweets
+###tweets
 This argument will show you the last 20 tweets you made.
 
-###spotify-this-song
+###spotify
 By default movie-this will return song information based on the first result of a sporify search for "What's My Age Again?". You can specify any move to search spotify for in the following way: node liri.js movie-this "Your Movie Name Here"
 
-###movie-this
+###movie
 By default movie-this will return movie information for "Mr. Nobody" from the OMDB. You can specify any move to search OMDB for in the following way: node liri.js movie-this "Your Movie Name Here"
 
-###do-what-it-says
+###read-command
 This command will read to text file random.txt and if the contents are a valid set of commands then it will run those commands, the text should be formatted like this:
 command,"command arugment"
-example: spotify-this-song,"Who Are You"
+example: spotify,"Who Are You"
 
 ##Log
 LIRI will also keep a log of all commands that are ran and the results and write them to the log.txt file in the repo.
