@@ -35,5 +35,8 @@ This command will read to text file random.txt and if the contents are a valid s
 command,"command arugment"
 example: spotify-this-song,"Who Are You"
 
+##Log
+LIRI will also keep a log of all commands that are ran and the results and write them to the log.txt file in the repo.
+
 ##Author
 Jimmy Mona
