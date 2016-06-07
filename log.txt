@@ -1,0 +1,97 @@
+/usr/local/bin/node,/Users/JamesMona/Development/rcb/liri/liri.js,tweets
+/usr/local/bin/node,/Users/JamesMona/Development/rcb/liri/liri.js,tweets
+Your last 20 tweets:
+
+1. On Sun Jun 05 13:13:58 +0000 2016 You Tweeted: RT @MrCorys: Fun times at @Viacom @getschooled #MogulInTheMaking today. Thx for having Mr. Cory inspire tech's future moguls! 🤓 https://t.c…
+
+2. On Sat Apr 30 04:41:17 +0000 2016 You Tweeted: Today I learned YouTube started as a Dating Website https://t.co/yePwn3Mvef via @motherboard
+
+4. On Sun Mar 27 21:31:17 +0000 2016 You Tweeted: @thejessicafelts Same here, glad I'm not the only developer who sometimes forget to eat, lol
+
+3. On Fri Apr 22 06:05:00 +0000 2016 You Tweeted: @hankgreen you should get the one tab extension for Google chrome. It takes all your tabs and puts them on one page.
+
+5. On Sun Mar 27 21:28:22 +0000 2016 You Tweeted: This couple can’t do the simplest things online because their last name is ‘Null’ https://t.co/BIxTQVJNpg via @thenextweb
+
+6. On Sun Mar 27 21:20:38 +0000 2016 You Tweeted: How one programmer broke the internet by deleting a tiny piece of code https://t.co/RVND3O8lc1 via @qz
+
+7. On Sat Mar 26 16:21:23 +0000 2016 You Tweeted: “Deep Learning Is Going to Teach Us All the Lesson of Our Lives: Jobs Are for Machines” by @2noame https://t.co/MD6L1Xq5rc
+
+8. On Wed Mar 09 22:15:01 +0000 2016 You Tweeted: BBC News - Google’s AI beats world Go champion in first of five matches https://t.co/wMC3fgUJMx
+
+9. On Sat Mar 05 13:07:03 +0000 2016 You Tweeted: RT @davelynchCINO: 99 bugs in the code
+99 bugs in the code
+take one down
+and patch it up
+117 bugs in the code
+#developerProblems
+
+10. On Sat Feb 20 23:00:15 +0000 2016 You Tweeted: Gearing Up for the Cloud, AT&amp;T Tells Its Workers: Adapt, or Else https://t.co/fRuaSOcPoy
+
+11. On Mon Feb 15 09:28:17 +0000 2016 You Tweeted: RT @nrygaming: When your code doesnt work when it should or works when it shouldnt #developerproblems #developers #programmers https://t.co…
+
+12. On Fri Jan 08 02:10:58 +0000 2016 You Tweeted: @hankgreen Space.
+
+13. On Mon Jan 04 06:43:43 +0000 2016 You Tweeted: RT @neiltyson: January 2nd / 3rd :  Merry Perihelion to all. The time of the year where Earth, in its oval orbit, passes closest to the Sun.
+
+14. On Sat Dec 26 22:55:55 +0000 2015 You Tweeted: A house right down the block from my parents house had a fire yesterday, please give if you can. https://t.co/Tpx22MMcnc via @gofundme
+
+15. On Fri Dec 25 16:01:36 +0000 2015 You Tweeted: RT @touchtapapps: Yes. Yes, indeed. #developerproblems https://t.co/IEpAgS4dVe @LivingTomorrow
+
+16. On Sat Dec 05 02:22:13 +0000 2015 You Tweeted: @michaelaranda are you a programmer?
+
+17. On Sat Dec 05 02:19:28 +0000 2015 You Tweeted: @hankgreen Life is Strange.
+
+18. On Sat Dec 05 02:07:13 +0000 2015 You Tweeted: @hankgreen Grand Theft Auto V.
+
+19. On Wed Nov 18 04:48:06 +0000 2015 You Tweeted: @hankgreen who the eff is hank?
+
+20. On Fri Oct 30 20:49:55 +0000 2015 You Tweeted: @MeeBee23 @LaLaLauraLucy @jennifer19bmth @hankgreen No problem, Hank made a great video explaining it on his side channel btw.
+
+/usr/local/bin/node,/Users/JamesMona/Development/rcb/liri/liri.js,tweets
+Your last 20 tweets:
+
+1. On Sun Jun 05 13:13:58 +0000 2016 You Tweeted: RT @MrCorys: Fun times at @Viacom @getschooled #MogulInTheMaking today. Thx for having Mr. Cory inspire tech's future moguls! 🤓 https://t.c…
+
+2. On Sat Apr 30 04:41:17 +0000 2016 You Tweeted: Today I learned YouTube started as a Dating Website https://t.co/yePwn3Mvef via @motherboard
+
+3. On Fri Apr 22 06:05:00 +0000 2016 You Tweeted: @hankgreen you should get the one tab extension for Google chrome. It takes all your tabs and puts them on one page.
+
+4. On Sun Mar 27 21:31:17 +0000 2016 You Tweeted: @thejessicafelts Same here, glad I'm not the only developer who sometimes forget to eat, lol
+
+5. On Sun Mar 27 21:28:22 +0000 2016 You Tweeted: This couple can’t do the simplest things online because their last name is ‘Null’ https://t.co/BIxTQVJNpg via @thenextweb
+
+6. On Sun Mar 27 21:20:38 +0000 2016 You Tweeted: How one programmer broke the internet by deleting a tiny piece of code https://t.co/RVND3O8lc1 via @qz
+
+7. On Sat Mar 26 16:21:23 +0000 2016 You Tweeted: “Deep Learning Is Going to Teach Us All the Lesson of Our Lives: Jobs Are for Machines” by @2noame https://t.co/MD6L1Xq5rc
+
+8. On Wed Mar 09 22:15:01 +0000 2016 You Tweeted: BBC News - Google’s AI beats world Go champion in first of five matches https://t.co/wMC3fgUJMx
+
+9. On Sat Mar 05 13:07:03 +0000 2016 You Tweeted: RT @davelynchCINO: 99 bugs in the code
+99 bugs in the code
+take one down
+and patch it up
+117 bugs in the code
+#developerProblems
+
+10. On Sat Feb 20 23:00:15 +0000 2016 You Tweeted: Gearing Up for the Cloud, AT&amp;T Tells Its Workers: Adapt, or Else https://t.co/fRuaSOcPoy
+
+11. On Mon Feb 15 09:28:17 +0000 2016 You Tweeted: RT @nrygaming: When your code doesnt work when it should or works when it shouldnt #developerproblems #developers #programmers https://t.co…
+
+12. On Fri Jan 08 02:10:58 +0000 2016 You Tweeted: @hankgreen Space.
+
+13. On Mon Jan 04 06:43:43 +0000 2016 You Tweeted: RT @neiltyson: January 2nd / 3rd :  Merry Perihelion to all. The time of the year where Earth, in its oval orbit, passes closest to the Sun.
+
+14. On Sat Dec 26 22:55:55 +0000 2015 You Tweeted: A house right down the block from my parents house had a fire yesterday, please give if you can. https://t.co/Tpx22MMcnc via @gofundme
+
+15. On Fri Dec 25 16:01:36 +0000 2015 You Tweeted: RT @touchtapapps: Yes. Yes, indeed. #developerproblems https://t.co/IEpAgS4dVe @LivingTomorrow
+
+16. On Sat Dec 05 02:22:13 +0000 2015 You Tweeted: @michaelaranda are you a programmer?
+
+17. On Sat Dec 05 02:19:28 +0000 2015 You Tweeted: @hankgreen Life is Strange.
+
+18. On Sat Dec 05 02:07:13 +0000 2015 You Tweeted: @hankgreen Grand Theft Auto V.
+
+19. On Wed Nov 18 04:48:06 +0000 2015 You Tweeted: @hankgreen who the eff is hank?
+
+20. On Fri Oct 30 20:49:55 +0000 2015 You Tweeted: @MeeBee23 @LaLaLauraLucy @jennifer19bmth @hankgreen No problem, Hank made a great video explaining it on his side channel btw.
+
