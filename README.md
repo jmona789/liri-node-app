@@ -38,5 +38,8 @@ example: spotify,"Who Are You"
 ##Log
 LIRI will also keep a log of all commands that are ran and the results and write them to the log.txt file in the repo.
 
+##Contributing
+This is an open source project, feel free to fork it and submit a pull request if you wish to contribute.  
+
 ##Author
 Jimmy Mona
